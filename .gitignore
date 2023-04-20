@@ -1,0 +1,54 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db
+frontEnd/.angular/cache/15.2.6/babel-webpack/2e68372c9a1efc97907da4d659032c05b89ec7c6140ddd9cfc80a9961ab4473d.json
+frontEnd/node_modules/@angular-devkit/build-angular/node_modules/rxjs/SubjectSubscription.js.map
+frontEnd/node_modules/
+frontEnd/node_modules/@angular-devkit/build-angular/node_modules
+
+frontEnd/.angular/cache/15.2.6/babel-webpack/f2e93698f75c58e7f08a5f5741e557546ae346e84abdeed3f83ccceeb5833bcf.json
+frontEnd/.vscode/tasks.json
+frontEnd/.angular/cache/15.2.6/babel-webpack/
+frontEnd/.angular/cache/15.2.6/angular-webpack/
+frontEnd/.vscode/extensions.json
+frontEnd/.vscode/launch.json
+Backend/node_modules/
