@@ -2,6 +2,7 @@ const express=require('express')
 const router=require('express').Router()
 const userModel=require('../model/userSchma')
 const bcrypt=require('bcrypt')
+const jwt=require('jsonwebtoken')
 
 router.post('/signup',check, async (req,res)=>{
 
@@ -36,7 +37,9 @@ router.post('/login',async(req,res)=>{
      if(!userOne) return res.status(400).send("User not register")
      const decrypt=await bcrypt.compare(req.body.password,userOne.password)
      if(!decrypt) return res.status(400).send("password is wrong")
+     const token=jwt.sign({id:userOne.id},process.env.JWTKEY,{expiresIn:'3d'})
      res.send(userOne) 
+
 })
 
 module.exports=router
