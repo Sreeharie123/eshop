@@ -42,4 +42,20 @@ router.post('/login',async(req,res)=>{
 
 })
 
+router.post('/verifyToken', (req, res) => {
+    const token = req.body.token
+    if (token) {
+        try {
+            const secret = process.env.private_json;
+            const decodedToken = jwt.verify(token, secret);
+            return res.status(200).send(true)
+        } catch {
+            return res.status(500).send('leo');
+        }
+    } else {
+        return res.status(500).send('shah')
+    }
+})
+
+
 module.exports=router
