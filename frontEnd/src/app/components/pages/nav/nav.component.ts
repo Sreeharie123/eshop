@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class NavComponent {
 
+  trueElement:boolean=false;
+
+  onClick(data:boolean){
+    this.trueElement=!data
+  }
+
 }

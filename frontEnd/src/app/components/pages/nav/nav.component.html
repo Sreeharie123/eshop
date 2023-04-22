@@ -1,12 +1,16 @@
-<div class="w-full h-20 bg-gray-900 main flex justify-between items-center px-10">
-
+<div class="w-full h-20 bg-gray-900 main flex justify-between items-center px-4 md:px-36 relative">
+  <div class="md:hidden" (click)="onClick(trueElement)">
+    <span class="material-symbols-outlined text-white text-4xl font-bold">
+      menu
+      </span>
+  </div>
   <div class="w-fit h-fit flex">
     <span class="material-symbols-outlined text-4xl text-txtp">
       shopping_cart
       </span>
        <p class="text-3xl font-bold text-txts">eshop</p>
   </div>
-  <div class="w-[36rem] h-12 flex items-center bg-white rounded-md overflow-hidden ring">
+  <div class="w-[36rem] h-12 flex items-center bg-white rounded-md overflow-hidden ring max-md:hidden">
     <select name="category" id="category" class="flex-1 h-full ring">
       <option value="All categories">All categories</option>
       <option value="All categories">All categories</option>
@@ -19,7 +23,7 @@
       </span>
   </div>
   <div class="text-white flex gap-4">
-    <span class="material-symbols-outlined text-3xl">
+    <span class="material-symbols-outlined text-3xl max-md:hidden">
       cycle
       </span>
     <span class="material-symbols-outlined text-3xl">
@@ -28,9 +32,10 @@
     <span class="material-symbols-outlined text-3xl">
       shopping_cart
       </span>
-      <span class="material-symbols-outlined text-3xl">
+      <span class="material-symbols-outlined text-3xl max-md:hidden">
         person
         </span>
   </div>
 
 </div>
+<div class="md:hidden w-full h-[calc(100vh-5rem)] bg-green-600 absolute top-20 right-0 z-50" *ngIf="trueElement"></div>
