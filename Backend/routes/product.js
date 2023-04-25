@@ -25,11 +25,16 @@ router.post('/create',async (req,res)=>{
 router.put('/update/:id',async(req,res)=>{
     const updatedData=req.body
     const id=req.params.id
-    const updatedProduct= await productModel.updateOne(
-        {_id:new ObjectId(id)},
-        {$set:updatedData})
-        if(!updatedProduct) return res.status(502).send('Not updated product')
-        res.send(updatedProduct)
+    try {
+        const updatedProduct= await productModel.updateOne(
+            {_id:new ObjectId(id)},
+            {$set:updatedData})
+            if(!updatedProduct) return res.status(502).send('Not updated the product')
+            res.send(updatedProduct)
+        
+    } catch (error) {
+        res.send("Id is not valid")
+    }
 })
 
 router.delete('/delete/:id',async(req,res)=>{
@@ -37,20 +42,20 @@ router.delete('/delete/:id',async(req,res)=>{
     const deletedProduct=await productModel.deleteOne(
         {_id:new ObjectId(id)}
     )
-    if(!deletedProduct) return res.status(502).send('Not updated product')
+    if(!deletedProduct) return res.status(502).send('Not deleted the product')
     res.send(deletedProduct)
 })
 
 router.get('/every',async (req,res)=>{
     const allProducts=await productModel.find()
-    if(!allProducts) return res.status(502).send('Not updated product')
+    if(!allProducts) return res.status(502).send('Not get all product')
     res.send(allProducts)
 })
 
 router.get('/unique/:id', async (req,res)=>{
     const id=req.params.id
     const singleProduct=await productModel.findById(id)
-    if(!singleProduct) return res.status(502).send('Not updated product')
+    if(!singleProduct) return res.status(502).send('Not get single product')
     res.send(singleProduct)
 })
 
