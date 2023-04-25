@@ -38,7 +38,7 @@ router.post('/login',async(req,res)=>{
      const decrypt=await bcrypt.compare(req.body.password,userOne.password)
      if(!decrypt) return res.status(400).send("password is wrong")
      const token=jwt.sign({id:userOne.id},process.env.JWTKEY,{expiresIn:'3d'})
-     res.send(userOne) 
+     res.send({token,userOne}) 
 
 })
 
@@ -46,7 +46,8 @@ router.post('/verifyToken', (req, res) => {
     const token = req.body.token
     if (token) {
         try {
-            const secret = process.env.private_json;
+            const secret = process.env.JWTKEY;
+
             const decodedToken = jwt.verify(token, secret);
             return res.status(200).send(true)
         } catch {
