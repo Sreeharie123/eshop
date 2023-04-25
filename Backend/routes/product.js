@@ -41,4 +41,17 @@ router.delete('/delete/:id',async(req,res)=>{
     res.send(deletedProduct)
 })
 
+router.get('/every',async (req,res)=>{
+    const allProducts=await productModel.find()
+    if(!allProducts) return res.status(502).send('Not updated product')
+    res.send(allProducts)
+})
+
+router.get('/unique/:id', async (req,res)=>{
+    const id=req.params.id
+    const singleProduct=await productModel.findById(id)
+    if(!singleProduct) return res.status(502).send('Not updated product')
+    res.send(singleProduct)
+})
+
 module.exports=router
