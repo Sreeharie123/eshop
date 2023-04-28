@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import { user } from './routes/user';
+import { auth } from './routes/auth';
 const app = express();
 const port = 4000;
 app.use(express.json())
@@ -12,7 +12,7 @@ mongoose.connect(mongooseUrl).then(()=>{
   console.log("database connected successfully")
 })
 
-app.use("/user",user)
+app.use("/user",auth)
 
 
 
