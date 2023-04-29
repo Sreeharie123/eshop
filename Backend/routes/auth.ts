@@ -42,7 +42,7 @@ router.post('/login',async(req,res)=>{
 
     const AccessToken= jwt.sign({
         id:user._doc._id,
-        isAdming:user._doc.isAdmin
+        isAdmin:user._doc.isAdmin
     },Secrete_jwt_Key,{expiresIn:"3d"})
     const{password,...others}=user._doc
     res.status(200).json({...others,AccessToken})
