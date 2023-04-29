@@ -9,29 +9,28 @@ import { AuthServiceService } from 'src/app/services/auth-service.service';
 })
 export class LoginComponent implements OnInit {
 
-  form!: FormGroup
-  loggedUserId!: string
+
   passwordVisible: boolean = false
-  constructor(
-    private fb: FormBuilder,
-    private authService:AuthServiceService
-  ) { }
-  ngOnInit() {
-    this.form = this.fb.group({
+  form!:FormGroup;
+  constructor(private fb:FormBuilder,private authService:AuthServiceService){}
+
+  ngOnInit(): void {
+
+    this.form=this.fb.group({
       email: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")]],
       password: ['', [Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)]]
     })
+  }
+  get fc(){
+    return this.form.controls;
+  }
 
+onSubmit(){
+ const email:string=this.form.value.email
+ const password:string=this.form.value.password
+ this.authService.getLogin(email,password).subscribe(console.log)
+}
 
-  }
-  get fc() {
-    return this.form.controls
-  }
-  onSubmit() {
-    this.authService.getLogin(this.form.value.email,this.form.value.password).subscribe({
-      next:(res)=>console.log(res)
-    })
-  }
   onTogglePasswordShow() {
     this.passwordVisible = !this.passwordVisible
   }

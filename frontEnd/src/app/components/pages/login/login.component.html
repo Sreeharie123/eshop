@@ -28,7 +28,7 @@
         ></object>
       </div>
       <!-- form section -->
-      <form [formGroup]="form" (submit)="onSubmit()">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="flex flex-col gap-5 px-3 rounded-md py-7">
           <div class="flex flex-col gap-3">
             <label for="">Email</label>
@@ -84,15 +84,11 @@
             </span>
             <div *ngIf="fc['password'].touched && fc['password'].invalid">
               <h1
-                class="text-red-500"
-                *ngIf="fc['password'].errors!['required']"
-              >
+                class="text-red-500" *ngIf="fc['password'].errors!['required']">
                 Password is required
               </h1>
               <h1
-                class="max-w-sm text-red-500"
-                *ngIf="fc['password'].errors!['pattern']"
-              >
+                class="max-w-sm text-red-500" *ngIf="fc['password'].errors!['pattern']">
                 Password must be at least 8 characters long , have 1
                 uppercaseLetter and 1 lowercaseLetter
               </h1>
