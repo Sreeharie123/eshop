@@ -36,7 +36,7 @@ onSubmit(){
     console.log(user)
   },
   error:(error)=>{
-    this.tostr.error(error.message)
+    this.tostr.error(error.error)
   },
   complete:()=>{
     this.tostr.success("Login successfully")

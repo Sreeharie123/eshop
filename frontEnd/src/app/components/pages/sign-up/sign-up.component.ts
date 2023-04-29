@@ -40,7 +40,7 @@ export class SignUpComponent implements OnInit {
            this.route.navigate(['/login'])
         },
         error:(error)=>{
-        this.tostr.error(error.message[0])
+        this.tostr.error(error.error)
         },
         complete:()=>{
           this.tostr.success("Registration successfully")

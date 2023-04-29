@@ -17,7 +17,7 @@ getLogin(email:string,password:string):Observable<Login>{
     email: email,
     password: password,
   };
-return this.http.post<Login>(`${this.baseUrl}/user/login`,body)
+return this.http.post<Login>(`${this.baseUrl}/auth/login`,body)
 }
 
 getRegister(data:registerData):Observable<register>{
