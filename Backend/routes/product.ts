@@ -46,8 +46,25 @@ router.delete('/delete/:productId',verifyTokenAndAdmin,async(req,res)=>{
     }
 })
 
-//Get
+//Get Products
+router.get('/all',async(req,res)=>{
+    try {
+        const allProduct= await productModel.find()
+        res.status(200).json(allProduct)
+    } catch (error) {
+      res.status(400).json(error)  
+    }
+})
 
+//Get SingleProduct
+router.get('/single/:productId',async(req,res)=>{
+    try {
+        const singleProduct=await productModel.findById(req.params.productId)
+        res.status(200).json(singleProduct)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+})
 
 
 export const product=router
