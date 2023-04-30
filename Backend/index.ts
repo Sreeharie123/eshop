@@ -5,6 +5,7 @@ import { auth } from './routes/auth';
 import cors from 'cors'
 import {user} from './routes/user'
 import { product } from './routes/product';
+import { cart } from './routes/cart';
 const app = express();
 const port = 4000;
 app.use(cors())
@@ -19,7 +20,7 @@ mongoose.connect(mongooseUrl).then(()=>{
 app.use("/auth",auth)
 app.use('/user',user)
 app.use('/product',product)
-
+app.use('/cart',cart)
 app.listen(port, function () {
     console.log(`App is listening on port ${port} !`);
 });
