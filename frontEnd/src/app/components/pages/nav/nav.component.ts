@@ -13,4 +13,8 @@ export class NavComponent {
     this.trueElement=!data
   }
 
+  searchElement:boolean=false
+  onSearchClick(data:boolean){
+   this.searchElement=!data
+  }
 }

@@ -10,32 +10,39 @@
       </span>
        <p class="text-3xl font-bold text-txts">eshop</p>
   </div>
-  <div class="w-[36rem] h-12 flex items-center bg-white rounded-md overflow-hidden max-md:hidden">
-    <select name="category" id="category" class="flex-1 h-full ring">
-      <option value="All categories">All categories</option>
-      <option value="All categories">All categories</option>
-      <option value="All categories">All categories</option>
-      <option value="All categories">All categories</option>
-    </select>
-    <input type="text" class="w-96 h-full border-none">
-    <span class="material-symbols-outlined text-2xl px-2">
-      search
-      </span>
+  <div class="flex gap-6 max-md:hidden">
+     <a class="text-gray-50 text-xl font-bold cursor-pointer hover:text-[#264eca]" routerLink="/home">Home</a>
+     <a class="text-gray-50 text-xl font-bold cursor-pointer hover:text-[#264eca]">Products</a>
+     <a class="text-gray-50 text-xl font-bold cursor-pointer hover:text-[#264eca]">About</a>
+     <a class="text-gray-50 text-xl font-bold cursor-pointer hover:text-[#264eca]">Support</a>
   </div>
-  <div class="text-white flex gap-4">
-    <span class="material-symbols-outlined text-3xl max-md:hidden">
-      cycle
-      </span>
-    <span class="material-symbols-outlined text-3xl">
-      favorite
-      </span>
-    <span class="material-symbols-outlined text-3xl">
+  <div class="w-fit h-full text-white flex items-center gap-4 relative">
+    <div class="h-12 bg-slate-200 rounded-3xl overflow-hidden absolute right-20 transition-all delay-700 ease-in" [ngClass]="{'w-0':!searchElement}">
+      <input type="text" class="w-96 h-12 rounded-3xl text-black">
+    </div>
+    <button class="material-symbols-outlined text-3xl hover:text-[#264eca] z-10 max-md:hidden" (click)="onSearchClick(searchElement)" [ngClass]="{'text-black':searchElement}">
+      search
+      </button>
+    <span class="material-symbols-outlined text-3xl hover:text-[#264eca]">
       shopping_cart
       </span>
-      <button class="material-symbols-outlined text-3xl max-md:hidden" routerLink="/login">
+      <button class="material-symbols-outlined text-3xl hover:text-[#264eca]" routerLink="/login">
         person
         </button>
   </div>
-
 </div>
-<div class="md:hidden w-full h-[calc(100vh-5rem)] bg-green-600 absolute top-20 right-0 z-50" *ngIf="trueElement"></div>
+<!-- mobileView -->
+<div class="md:hidden w-full bg-gray-900 absolute top-20 right-0 py-4 -translate-y-96 transition-all rounded-b-md" [ngClass]="{'translate-y-0':trueElement}">
+<div class="flex flex-col gap-4 px-4">
+  <div class="relative">
+    <input type="text" class="w-full rounded-3xl pl-10">
+    <button class="material-symbols-outlined text-3xl hover:text-[#264eca] z-10 absolute top-1 left-3">
+      search
+      </button>
+  </div>
+  <a class="text-gray-50 cursor-pointer mb-2 hover:text-[#264eca] border-b-2" (click)="onClick(trueElement)">Home</a>
+  <a class="text-gray-50 cursor-pointer mb-2 hover:text-[#264eca] border-b-2" (click)="onClick(trueElement)">Products</a>
+  <a class="text-gray-50 cursor-pointer mb-2 hover:text-[#264eca] border-b-2" (click)="onClick(trueElement)">About</a>
+  <a class="text-gray-50 cursor-pointer mb-2 hover:text-[#264eca] border-b-2" (click)="onClick(trueElement)">Support</a>
+</div>
+</div>
