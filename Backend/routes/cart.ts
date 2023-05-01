@@ -4,7 +4,6 @@ import { cartModel } from "../models/cartSchema"
 import { cartInterface } from "../interfaces/cart"
 const router=express.Router()
 
-
 //Create Cart
 router.post('/create/:id',verifyTokenAndAuthorization,async(req,res)=>{
     const newProduct={productId:req.body.products[0].productId, quantity:req.body.products[0].quantity}
@@ -33,4 +32,25 @@ router.post('/create/:id',verifyTokenAndAuthorization,async(req,res)=>{
        
 })
 
+//delete
+router.delete('/delete/:id/:productId',verifyTokenAndAuthorization,async(req,res)=>{ 
+   try {
+   const deleteProduct=await cartModel.updateOne({userId:req.params.id},{$pull:{products:{productId:req.params.productId}}})
+      res.status(200).json(deleteProduct)
+   } catch (error) {
+      res.status(500).json(error)
+   }
+})
+
+//deleteAll
+router.delete('/deleteAll/:id',verifyTokenAndAuthorization,async(req,res)=>{
+   try {
+      const deletedCart=await cartModel.deleteOne({userId:req.params.id})
+      res.status(500).json(deletedCart)
+   } catch (error) {
+      res.status(500).json(error)
+   }
+})
+
 export const cart=router
+
