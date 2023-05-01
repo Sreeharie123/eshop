@@ -6,6 +6,7 @@ import cors from 'cors'
 import {user} from './routes/user'
 import { product } from './routes/product';
 import { cart } from './routes/cart';
+import { order } from './routes/order';
 const app = express();
 const port = 4000;
 app.use(cors())
@@ -21,6 +22,7 @@ app.use("/auth",auth)
 app.use('/user',user)
 app.use('/product',product)
 app.use('/cart',cart)
+app.use('/order',order)
 app.listen(port, function () {
     console.log(`App is listening on port ${port} !`);
 });
