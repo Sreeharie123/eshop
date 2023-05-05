@@ -1,4 +1,4 @@
-<div class="w-full h-20 bg-gray-900 main flex justify-between items-center px-4 md:px-36 relative">
+<div class="w-full h-20 bg-gray-900 main flex justify-between items-center px-4 md:px-52 relative">
   <div class="md:hidden" (click)="onClick(trueElement)">
     <span class="material-symbols-outlined text-white text-4xl font-bold">
       menu
@@ -11,13 +11,13 @@
        <p class="text-3xl font-bold text-txts">eshop</p>
   </div>
   <div class="flex gap-8 max-md:hidden">
-     <a class="text-gray-50 text-lg font-bold cursor-pointer hover:text-[#264eca]" routerLink="/home">Home</a>
-     <a class="text-gray-50 text-lg font-bold cursor-pointer hover:text-[#264eca]">Products</a>
-     <a class="text-gray-50 text-lg font-bold cursor-pointer hover:text-[#264eca]">About</a>
-     <a class="text-gray-50 text-lg font-bold cursor-pointer hover:text-[#264eca]">Support</a>
+     <a class="text-gray-50 font-mono text-xl cursor-pointer hover:text-[#264eca]" routerLink="/home">Home</a>
+     <a class="text-gray-50 font-mono text-xl cursor-pointer hover:text-[#264eca]">Products</a>
+     <a class="text-gray-50 font-mono text-xl cursor-pointer hover:text-[#264eca]">About</a>
+     <a class="text-gray-50 font-mono text-xl cursor-pointer hover:text-[#264eca]">Support</a>
   </div>
   <div class="w-fit h-full text-white flex items-center gap-4 relative">
-    <div class="h-12 bg-slate-200 rounded-3xl overflow-hidden absolute right-20 transition-all delay-700 ease-in" [ngClass]="{'w-0':!searchElement}">
+    <div class="h-12 bg-slate-200 rounded-3xl overflow-hidden absolute right-20 w-0 transition-all ease-linear duration-1000" [ngClass]="{'w-96':searchElement}">
       <input type="text" class="w-96 h-12 rounded-3xl text-black">
     </div>
     <button class="material-symbols-outlined text-3xl hover:text-[#264eca] z-10 max-md:hidden" (click)="onSearchClick(searchElement)" [ngClass]="{'text-black':searchElement}">

@@ -12,6 +12,7 @@ import {HttpClientModule} from '@angular/common/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AngularMaterialModule } from './module/angular-material/angular-material.module';
+import { CatergoriesComponent } from './components/layout/catergories/catergories.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { AngularMaterialModule } from './module/angular-material/angular-materia
     SignUpComponent,
     NavComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    CatergoriesComponent
   ],
   imports: [
     BrowserModule,
