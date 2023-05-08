@@ -14,11 +14,29 @@
   </div>
 </div>
 
+<!-- Categories -->
+<div class="md:px-52 flex items-center gap-6 whitespace-nowrap overflow-x-auto px-4">
+<h1 class="md:text-2xl text-lg font-bold">Featured Categories</h1>
+<a class="hover:text-[#ff8319] cursor-pointer">Cake & Milk</a>
+<a class="hover:text-[#ff8319] cursor-pointer">Coffees & Teas</a>
+<a class="hover:text-[#ff8319] cursor-pointer">Pet Foods</a>
+<a class="hover:text-[#ff8319] cursor-pointer">Vegetables</a>
+</div>
 
-<div class="px-52 flex items-center">
-<h1 class="text-2xl">Featured Categories</h1>
-<a>Cake & Milk</a>
-<a>Coffees & Teas</a>
-<a>Pet Foods</a>
-<a>Vegetables</a>
+<div class="md:px-52 px-4">
+  <div class="w-full h-fit md:py-6 py-4 flex gap-6 overflow-x-auto">
+    <div class="w-fit h-full flex" *ngFor="let category of categoryList|async">
+      <div class="w-fit h-fit p-4 bg-gray-200 rounded-md">
+        <div class="w-36 h-40 overflow-hidden rounded-md relative bg-red-500">
+          <img src="https://img.freepik.com/free-photo/healthy-vegetables-wooden-table_1150-38014.jpg?w=360" class="w-full h-full absolute inset-0 object-cover">
+        </div>
+        <div class="w-full flex flex-col items-center leading-3">
+          <p class="text-xl">{{category}}</p>
+          <p class="text-gray-700">26 item</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
 </div>

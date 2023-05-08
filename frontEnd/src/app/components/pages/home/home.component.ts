@@ -1,13 +1,16 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Observable } from 'rxjs';
+import { CategoriesService } from 'src/app/services/categories.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
-
+export class HomeComponent implements OnInit {
+  constructor(private categories:CategoriesService){}
+  categoryList?:Observable<string[]>
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -30,6 +33,10 @@ export class HomeComponent {
         items: 1
       }
     },
+  }
+
+  ngOnInit(): void {
+   this.categoryList=this.categories.getCategories()
   }
 
 }

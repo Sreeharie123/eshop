@@ -67,4 +67,18 @@ router.get('/single/:productId',async(req,res)=>{
 })
 
 
+router.get('/allCategory',async(req,res)=>{
+   try {
+    const allCategory=await productModel.aggregate(
+        [
+            {$group:{_id:"$categories"}},
+            { $project: { _id: 0, categories: "$_id" } }
+        ]
+    )
+    res.status(200).json(allCategory)
+   } catch (error) {
+    res.status(500).json(error)
+   }
+})
+
 export const product=router

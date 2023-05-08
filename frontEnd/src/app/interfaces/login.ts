@@ -30,3 +30,6 @@ export interface register{
   _id:string
 }
 
+export interface categoryList {
+  categories: string[];
+}
