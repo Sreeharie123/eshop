@@ -28,7 +28,6 @@ getRegister(data:registerData):Observable<register>{
     password:data.password
   }
  return this.http.post<register>(`${this.baseUrl}/user/register`,body)
-
 }
 
 }

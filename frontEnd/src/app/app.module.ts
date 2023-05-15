@@ -14,6 +14,7 @@ import { ToastrModule } from 'ngx-toastr';
 // import { AngularMaterialModule } from './module/angular-material/angular-material.module';
 import { CatergoriesComponent } from './components/layout/catergories/catergories.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { AngularMaterialModule } from './module/angular-material/angular-material.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    // AngularMaterialModule,
+    AngularMaterialModule,
     CarouselModule
   ],
   providers: [],

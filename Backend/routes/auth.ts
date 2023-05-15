@@ -5,11 +5,10 @@ import bcrypt from 'bcrypt'
 import { fullUser, user } from "../interfaces/user"
 import jwt from "jsonwebtoken"
 const router=express.Router()
+
 //Create User
 router.post('/register',checkEmail,async(req,res)=>{
-    const { error } = req.body
-    if (error) return res.status(500).send(error[0].message)
-
+    try {
     const salt = await bcrypt.genSalt(10)
     const hashPass = await bcrypt.hash(req.body.password, salt)
     const newUser= new userModel({
@@ -18,7 +17,6 @@ router.post('/register',checkEmail,async(req,res)=>{
         email:req.body.email,
         password:hashPass
     })
-    try {
         const user=await newUser.save()
         res.status(200).json(user)
     } catch (error) {
@@ -29,9 +27,7 @@ router.post('/register',checkEmail,async(req,res)=>{
 
 //Login User
 router.post('/login',async(req,res)=>{
-    const { error } = req.body
-    if (error) return res.status(500).send(error[0].message)
-    
+
     const user=await userModel.findOne<fullUser>({email:req.body.email})
     if(!user) return res.status(500).json("There is no user with this email")
 

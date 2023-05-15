@@ -29,7 +29,7 @@ export class SignUpComponent implements OnInit {
       confirmPassword: ['', [Validators.required,Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)]]
     })
   }
-  get fc() {
+  get controls() {
     return this.form.controls
   }
   onFormSubmit(){

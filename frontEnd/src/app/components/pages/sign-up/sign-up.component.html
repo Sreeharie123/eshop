@@ -91,19 +91,19 @@
               formControlName="firstName"
               class="w-full px-2 py-3 mt-2 text-sm text-gray-700 bg-white border-gray-200 rounded-md shadow-sm"
             />
-            <div *ngIf="fc['firstName'].touched && fc['firstName'].invalid">
+            <div *ngIf="controls['firstName'].dirty && controls['firstName'].invalid">
               <h1
                 class="text-red-500"
-                *ngIf="fc['firstName'].errors!['required']"
+                *ngIf="controls['firstName'].errors!['required']"
               >
                 first name is required
               </h1>
               <h1
-                class="text-red-500"
-                *ngIf="fc['firstName'].errors!['minlength']"
-              >
-                min 3 letters required
-              </h1>
+              class="text-red-500"
+              *ngIf="controls['firstName'].errors!['minlength']"
+            >
+              first name must be at least 2 words
+            </h1>
             </div>
           </div>
 
@@ -122,18 +122,18 @@
               formControlName="lastName"
               class="w-full px-2 py-3 mt-2 text-sm text-gray-700 bg-white border-gray-200 rounded-md shadow-sm"
             />
-            <div *ngIf="fc['lastName'].touched && fc['lastName'].invalid">
+            <div *ngIf="controls['lastName'].dirty && controls['lastName'].invalid">
               <h1
                 class="text-red-500"
-                *ngIf="fc['lastName'].errors!['required']"
+                *ngIf="controls['lastName'].errors!['required']"
               >
                 last name name is required
               </h1>
               <h1
-                *ngIf="fc['lastName'].errors!['minlength']"
+                *ngIf="controls['lastName'].errors!['minlength']"
                 class="text-red-500"
               >
-                minimum 3 letters
+                minimum 2 letters
               </h1>
             </div>
           </div>
@@ -150,14 +150,21 @@
               formControlName="email"
               class="w-full px-2 py-3 mt-2 text-sm text-gray-700 bg-white border-gray-200 rounded-md shadow-sm"
             />
-            <div *ngIf="fc['email'].touched && fc['email'].invalid">
-              <h1 class="text-red-500" *ngIf="fc['email'].errors!['required']">
-                Email is required
+            <div *ngIf="controls['email'].dirty && controls['email'].invalid">
+              <h1
+                class="text-red-500"
+                *ngIf="controls['email'].errors!['required']"
+              >
+                last name name is required
               </h1>
-              <h1 *ngIf="fc['email'].errors!['pattern']" class="text-red-500">
-                Enter a valid email
+              <h1
+                *ngIf="controls['email'].errors!['pattern']"
+                class="text-red-500"
+              >
+              email is invalid
               </h1>
             </div>
+
           </div>
 
           <div class="col-span-6 sm:col-span-3">
@@ -174,22 +181,8 @@
               name="password"
               formControlName="password"
               class="w-full px-2 py-3 mt-2 text-sm text-gray-700 bg-white border-gray-200 rounded-md shadow-sm"
+              required
             />
-            <div *ngIf="fc['password'].touched && fc['password'].invalid">
-              <h1
-                class="text-red-500"
-                *ngIf="fc['password'].errors!['required']"
-              >
-                Password is required
-              </h1>
-              <h1
-                class="max-w-sm text-red-500"
-                *ngIf="fc['password'].errors!['pattern']"
-              >
-                Password must be at least 8 characters long , have 1
-                uppercaseLetter and 1 lowercaseLetter
-              </h1>
-            </div>
           </div>
 
           <div class="col-span-6 sm:col-span-3">
@@ -206,8 +199,22 @@
               name="confirmPassword"
               class="w-full px-2 py-3 mt-2 text-sm text-gray-700 bg-white border-gray-200 rounded-md shadow-sm"
               formControlName="confirmPassword"
+              required
             />
           </div>
+          <div
+          class="text-red-500"
+          *ngIf="controls['confirmPassword'].touched"
+        >
+          <span *ngIf="controls['confirmPassword']?.hasError('required')" class="whitespace-nowrap">
+            * Confirm password is required
+          </span>
+          <span
+            *ngIf="controls['confirmPassword']?.hasError('required') && form.errors?.['passwordsMissMatch']" class="whitespace-nowrap"
+          >
+            *Password doesn't match
+          </span>
+        </div>
 
           <div class="col-span-6">
             <label for="MarketingAccept" class="flex gap-4">

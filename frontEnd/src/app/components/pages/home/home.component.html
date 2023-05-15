@@ -1,21 +1,21 @@
 <app-categories></app-categories>
 <!-- carrousel -->
-<div class="h-fit md:my-4 py-2 md:px-52 relative" >
+<div class="md:my-0 py-1 md:px-10 relative" >
   <owl-carousel-o [options]="customOptions">
     <ng-container *ngFor="let slide of [1,2,2,2]">
       <ng-template carouselSlide>
-        <img src="https://images.unsplash.com/photo-1552053387-494dfcf63b47?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80" class="w-full md:h-[35rem] object-cover object-center bg-no-repeat opacity-90" >
+        <img src="https://images.unsplash.com/photo-1552053387-494dfcf63b47?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80" class="w-full md:h-[50rem] object-cover object-center bg-no-repeat opacity-90" >
       </ng-template>
     </ng-container>
   </owl-carousel-o>
-  <div class="w-[78.5%] h-[98%] bg-transparent z-20 absolute top-2 flex flex-col justify-center pl-10">
+  <div class="w-[80.5%] h-[98%] bg-transparent z-20 absolute top-0 flex flex-col justify-center md:pl-20 pl-6">
     <p class="text-white md:text-5xl text-2xl font-bold">Fresh Vegetables <br> Big Discount</p>
     <p class="text-white md:text-3xl font-bold">Save upto 40% on your first order</p>
   </div>
 </div>
 
 <!-- Categories -->
-<div class="md:px-52 flex items-center gap-6 whitespace-nowrap overflow-x-auto px-4">
+<div class="md:px-10 flex items-center gap-6 whitespace-nowrap overflow-x-auto px-4">
 <h1 class="md:text-2xl text-lg font-bold">Featured Categories</h1>
 <a class="hover:text-[#ff8319] cursor-pointer">Cake & Milk</a>
 <a class="hover:text-[#ff8319] cursor-pointer">Coffees & Teas</a>
@@ -23,7 +23,7 @@
 <a class="hover:text-[#ff8319] cursor-pointer">Vegetables</a>
 </div>
 
-<div class="md:px-52 px-4">
+<div class="md:px-10 px-4">
   <div class="w-full h-fit md:py-6 py-4 flex gap-6 overflow-x-auto">
     <div class="w-fit h-full flex" *ngFor="let category of categoryList|async">
       <div class="w-fit h-fit p-4 bg-gray-200 rounded-md">
@@ -36,7 +36,6 @@
         </div>
       </div>
     </div>
-
   </div>
-
 </div>
+

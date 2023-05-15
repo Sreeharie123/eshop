@@ -1,38 +1,36 @@
-<div class="w-full h-20 bg-gray-900 main flex justify-between items-center px-4 md:px-52 relative">
+<div class="w-full h-16 bg-gray-100 main flex justify-between items-center px-4 md:px-10 relative">
   <div class="md:hidden" (click)="onClick(trueElement)">
-    <span class="material-symbols-outlined text-white text-4xl font-bold">
+    <span class="material-symbols-outlined text-black text-4xl font-bold">
       menu
       </span>
   </div>
-  <div class="w-fit h-fit flex">
-    <span class="material-symbols-outlined text-4xl text-txtp">
-      shopping_cart
+  <div class="flex">
+    <span class="material-symbols-outlined text-3xl text-yellow-500" >
+      star_half
       </span>
-       <p class="text-3xl font-bold text-txts">eshop</p>
+      <p class="text-3xl text-blue-600 font-bold">gency<i class="text-yellow-500">hut</i></p>
   </div>
   <div class="flex gap-8 max-md:hidden">
-     <a class="text-gray-50 font-mono text-xl cursor-pointer hover:text-[#264eca]" routerLink="/home">Home</a>
-     <a class="text-gray-50 font-mono text-xl cursor-pointer hover:text-[#264eca]">Products</a>
-     <a class="text-gray-50 font-mono text-xl cursor-pointer hover:text-[#264eca]">About</a>
-     <a class="text-gray-50 font-mono text-xl cursor-pointer hover:text-[#264eca]">Support</a>
+     <a class="text-xl font-medium cursor-pointer hover:text-[#264eca]" routerLink="/home">Home</a>
+     <a class="text-xl font-medium cursor-pointer hover:text-[#264eca]">Products</a>
+     <a class="text-xl font-medium cursor-pointer hover:text-[#264eca]">About</a>
+     <a class="text-xl font-medium cursor-pointer hover:text-[#264eca]">Support</a>
   </div>
-  <div class="w-fit h-full text-white flex items-center gap-4 relative">
-    <div class="h-12 bg-slate-200 rounded-3xl overflow-hidden absolute right-20 w-0 transition-all ease-linear duration-1000" [ngClass]="{'w-96':searchElement}">
+  <div class="w-fit h-full flex items-center gap-4 relative">
+    <div class="h-12 bg-slate-800 rounded-3xl overflow-hidden absolute right-20 w-0 transition-all ease-linear duration-1000" [ngClass]="{'w-96':searchElement}">
       <input type="text" class="w-96 h-12 rounded-3xl text-black">
     </div>
-    <button class="material-symbols-outlined text-3xl hover:text-[#264eca] z-10 max-md:hidden" (click)="onSearchClick(searchElement)" [ngClass]="{'text-black':searchElement}">
+    <button class="material-symbols-outlined text-3xl hover:text-[#264eca] z-10 max-md:hidden text-black" (click)="onSearchClick(searchElement)" [ngClass]="{'text-black':searchElement}">
       search
       </button>
-    <span class="material-symbols-outlined text-3xl hover:text-[#264eca]">
-      shopping_cart
-      </span>
-      <button class="material-symbols-outlined text-3xl hover:text-[#264eca]" routerLink="/login">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="shopping_cart" class="text-black"></mat-icon>
+      <button class="material-symbols-outlined text-3xl text-black hover:text-[#264eca]" routerLink="/login">
         person
         </button>
   </div>
 </div>
 <!-- mobileView -->
-<div class="md:hidden w-full bg-gray-900 absolute top-20 right-0 py-4 -translate-y-96 transition-all rounded-b-md z-50 md:z-0" [ngClass]="{'translate-y-0':trueElement}">
+<div class="md:hidden w-full bg-gray-900 absolute top-20 right-0 py-4 -translate-y-96 transition-all rounded-b-md z-50 md:z-0" [ngClass]="{'-translate-y-4':trueElement}">
 <div class="flex flex-col gap-4 px-4">
   <div class="relative">
     <input type="search" class="w-full rounded-3xl pl-10">
