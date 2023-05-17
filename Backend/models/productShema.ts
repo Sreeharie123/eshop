@@ -15,10 +15,6 @@ const productSchema=new mongoose.Schema<productInterface>({
     type:String,
     required:true,
  },
- categories:{
-    type:[],
-    required:true
- },
  size:{
     type:Number,
     required:true

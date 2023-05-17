@@ -10,7 +10,6 @@ router.post('/create',verifyTokenAndAdmin,async(req,res)=>{
         title:req.body.title,
         description:req.body.description,
         image:req.body.image,
-        categories:req.body.categories,
         color:req.body.color,
         prize:req.body.prize,
         size:req.body.size
