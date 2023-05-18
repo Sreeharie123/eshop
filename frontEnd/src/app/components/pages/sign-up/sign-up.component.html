@@ -155,7 +155,7 @@
                 class="text-red-500"
                 *ngIf="controls['email'].errors!['required']"
               >
-                last name name is required
+                last email is required
               </h1>
               <h1
                 *ngIf="controls['email'].errors!['pattern']"
@@ -204,34 +204,17 @@
           </div>
           <div
           class="text-red-500"
-          *ngIf="controls['confirmPassword'].touched"
+          *ngIf="controls['confirmPassword'].dirty && controls['confirmPassword'].errors"
         >
           <span *ngIf="controls['confirmPassword']?.hasError('required')" class="whitespace-nowrap">
             * Confirm password is required
           </span>
           <span
-            *ngIf="controls['confirmPassword']?.hasError('required') && form.errors?.['passwordsMissMatch']" class="whitespace-nowrap"
+            *ngIf="controls['confirmPassword']?.errors && controls['confirmPassword'].hasError('passwordsMissMatch')" class="whitespace-nowrap"
           >
             *Password doesn't match
           </span>
         </div>
-
-          <div class="col-span-6">
-            <label for="MarketingAccept" class="flex gap-4">
-              <input
-                type="checkbox"
-                id="MarketingAccept"
-                name="marketing_accept"
-                class="w-5 h-5 border-gray-200 text-blue-0 rounded-md shadow-sm"
-              />
-
-              <span class="text-sm text-gray-700">
-                I want to receive emails about events, product updates and
-                company announcements.
-              </span>
-            </label>
-          </div>
-
           <div class="col-span-6">
             <p class="text-sm text-gray-500">
               By creating an account, you agree to our
@@ -245,7 +228,6 @@
 
           <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
             <button
-              [disabled]="form.invalid"
               class="inline-block px-12 py-3 text-sm font-medium text-white transition bg-blue-600 border border-blue-600 rounded-md shrink-0 hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
             >
               Create an account

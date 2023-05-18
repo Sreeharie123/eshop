@@ -1,7 +1,9 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Observable } from 'rxjs';
+import { categoryList } from 'src/app/interfaces/login';
 import { CategoriesService } from 'src/app/services/categories.service';
+import { SpinnerService } from 'src/app/services/spinner.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +12,7 @@ import { CategoriesService } from 'src/app/services/categories.service';
 })
 export class HomeComponent implements OnInit {
   constructor(private categories:CategoriesService){}
-  categoryList?:Observable<string[]>
+  categoryList?:Observable<categoryList[]>
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -36,7 +38,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   this.categoryList=this.categories.getCategories()
+  this.categoryList = this.categories.getCategories()
   }
 
 }

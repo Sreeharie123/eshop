@@ -8,13 +8,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavComponent } from './components/pages/nav/nav.component';
 import { FooterComponent } from './components/pages/footer/footer.component';
 import { HomeComponent } from './components/pages/home/home.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-// import { AngularMaterialModule } from './module/angular-material/angular-material.module';
 import { CatergoriesComponent } from './components/layout/catergories/catergories.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AngularMaterialModule } from './module/angular-material/angular-material.module';
+import { DetailPageComponent } from './components/pages/detail-page/detail-page.component';
+import { SpinnerService } from './services/spinner.service';
+import { LoadingInterceptor } from './url';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,8 @@ import { AngularMaterialModule } from './module/angular-material/angular-materia
     NavComponent,
     FooterComponent,
     HomeComponent,
-    CatergoriesComponent
+    CatergoriesComponent,
+    DetailPageComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,9 @@ import { AngularMaterialModule } from './module/angular-material/angular-materia
     AngularMaterialModule,
     CarouselModule
   ],
-  providers: [],
+  providers: [
+  {provide:HTTP_INTERCEPTORS,useClass:LoadingInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { SpinnerService } from 'src/app/services/spinner.service';
 
 @Component({
   selector: 'app-nav',
@@ -6,6 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent {
+
+  constructor(public loadingService:SpinnerService){}
+
+
 
   trueElement:boolean=false;
 

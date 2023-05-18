@@ -27,7 +27,8 @@ getRegister(data:registerData):Observable<register>{
     email:data.email,
     password:data.password
   }
- return this.http.post<register>(`${this.baseUrl}/user/register`,body)
+
+ return this.http.post<register>(`${this.baseUrl}/auth/register`,body)
 }
 
 }

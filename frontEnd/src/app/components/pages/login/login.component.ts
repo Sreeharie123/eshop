@@ -1,3 +1,4 @@
+import { Token } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -32,8 +33,8 @@ onSubmit(){
  const password:string=this.form.value.password
  this.authService.getLogin(email,password).subscribe({
   next:(user)=>{
+    localStorage.setItem("token",user.AccessToken)
     this.route.navigate(['/home'])
-    console.log(user)
   },
   error:(error)=>{
     this.tostr.error(error.error)

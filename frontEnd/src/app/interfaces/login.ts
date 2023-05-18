@@ -31,5 +31,8 @@ export interface register{
 }
 
 export interface categoryList {
-  categories: string[];
+  _id: string;
+  categoryName: string;
+  quantity: number;
+  __v: number;
 }
