@@ -12,8 +12,11 @@ const categorySchema=new mongoose.Schema<category>(
         quantity:{
             type:Number,
             required:true
+        },
+        imgUrl:{
+            type:String,
+            required:true
         }
-    
     }
 )
 

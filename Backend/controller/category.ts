@@ -8,7 +8,8 @@ export const addCategory=async(req:Request,res:Response)=>{
     const newCategory=new categoryModel<category>(
       {
           categoryName:req.body.categoryName,
-          quantity:req.body.quantity
+          quantity:req.body.quantity,
+          imgUrl:req.body.imgUrl
       }
     )
     if(!newCategory) res.status(400).json("Category is not found")
