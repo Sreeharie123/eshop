@@ -13,6 +13,9 @@ module.exports = {
      colors:{
        "txtp":"#fab534",
        "txts":"#3639d6"
+     },
+     fontFamily:{
+      "playfair":['Playfair', "serif"]
      }
     },
   },

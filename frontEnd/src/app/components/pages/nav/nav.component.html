@@ -1,4 +1,4 @@
-<div class="w-full h-16 bg-gray-100 main flex justify-between items-center px-4 md:px-10 relative">
+<div class="w-full h-16 bg-gray-100 main flex justify-between items-center px-4 lg:px-44 md:px-10 relative">
   <div class="md:hidden" (click)="onClick(trueElement)">
     <span class="material-symbols-outlined text-black text-4xl font-bold">
       menu
@@ -23,7 +23,7 @@
     <button class="material-symbols-outlined text-3xl hover:text-[#264eca] z-10 max-md:hidden text-black" (click)="onSearchClick(searchElement)" [ngClass]="{'text-black':searchElement}">
       search
       </button>
-      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="shopping_cart" class="text-black"></mat-icon>
+      <mat-icon fontIcon="shopping_cart" matBadge="8" class="cursor-pointer" routerLink="/cart"></mat-icon>
       <button class="material-symbols-outlined text-3xl text-black hover:text-[#264eca]" routerLink="/login">
         person
         </button>

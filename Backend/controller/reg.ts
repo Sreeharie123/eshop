@@ -1,9 +1,10 @@
+import { Request, Response } from "express"
 import { fullUser } from "../interfaces/user"
 import { userModel } from "../models/userShema"
 import bcrypt from 'bcrypt'
 import jwt from "jsonwebtoken"
 
-export const register = async(req,res)=>{
+export const login = async(req:Request,res:Response)=>{
     const user=await userModel.findOne<fullUser>({email:req.body.email})
     if(!user) return res.status(500).json("There is no user with this email")
 
@@ -21,7 +22,7 @@ export const register = async(req,res)=>{
 }
 
 
-export const login= async(req,res)=>{
+export const register= async(req:Request,res:Response)=>{
     try {
     const salt = await bcrypt.genSalt(10)
     const hashPass = await bcrypt.hash(req.body.password, salt)

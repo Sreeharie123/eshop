@@ -17,6 +17,9 @@ import { AngularMaterialModule } from './module/angular-material/angular-materia
 import { DetailPageComponent } from './components/pages/detail-page/detail-page.component';
 import { SpinnerService } from './services/spinner.service';
 import { LoadingInterceptor } from './url';
+import { HeroSectionComponent } from './components/layout/hero-section/hero-section.component';
+import { ProductCategoryComponent } from './components/layout/product-category/product-category.component';
+import { CartpageComponent } from './components/pages/cartpage/cartpage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,10 @@ import { LoadingInterceptor } from './url';
     FooterComponent,
     HomeComponent,
     CatergoriesComponent,
-    DetailPageComponent
+    DetailPageComponent,
+    HeroSectionComponent,
+    ProductCategoryComponent,
+    CartpageComponent
   ],
   imports: [
     BrowserModule,

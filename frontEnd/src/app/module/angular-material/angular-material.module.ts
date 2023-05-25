@@ -12,7 +12,6 @@ import {MatProgressBarModule} from "@angular/material/progress-bar"
  MatIconModule,
  MatProgressSpinnerModule,
  MatProgressBarModule
-
   ]
 })
 export class AngularMaterialModule { }
