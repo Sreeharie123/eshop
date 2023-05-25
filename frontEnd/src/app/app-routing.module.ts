@@ -5,15 +5,16 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { SignUpComponent } from './components/pages/sign-up/sign-up.component';
 import { DetailPageComponent } from './components/pages/detail-page/detail-page.component';
 import { CartpageComponent } from './components/pages/cartpage/cartpage.component';
+import { ProductDetailsComponent } from './components/pages/product-details/product-details.component';
 
 const routes: Routes = [
   {path:'',redirectTo:"home",pathMatch:'full'},
   {path:"home",component:HomeComponent},
   {path:'login',component:LoginComponent},
   {path:'register',component:SignUpComponent},
-  {path:'categoryDetail',component:DetailPageComponent},
-  {path:'cart',component:CartpageComponent}
-
+  {path:'categoryDetail/:id',component:DetailPageComponent},
+  {path:'cart',component:CartpageComponent},
+  {path:"product",component:ProductDetailsComponent}
 ];
 
 @NgModule({

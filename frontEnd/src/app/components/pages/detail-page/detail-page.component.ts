@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-detail-page',

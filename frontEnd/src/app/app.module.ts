@@ -20,6 +20,7 @@ import { LoadingInterceptor } from './url';
 import { HeroSectionComponent } from './components/layout/hero-section/hero-section.component';
 import { ProductCategoryComponent } from './components/layout/product-category/product-category.component';
 import { CartpageComponent } from './components/pages/cartpage/cartpage.component';
+import { ProductDetailsComponent } from './components/pages/product-details/product-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { CartpageComponent } from './components/pages/cartpage/cartpage.componen
     DetailPageComponent,
     HeroSectionComponent,
     ProductCategoryComponent,
-    CartpageComponent
+    CartpageComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -30,9 +30,3 @@ export interface register{
   _id:string
 }
 
-export interface categoryList {
-  _id: string;
-  categoryName: string;
-  quantity: number;
-  __v: number;
-}

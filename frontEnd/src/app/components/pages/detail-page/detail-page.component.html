@@ -1,16 +1,19 @@
-<section class="text-gray-600 body-font flex flex-wrap">
-  <div class="container px-5 md:py-24 py-8 mx-auto">
-    <div class="flex flex-wrap -m-4" *ngFor="let item of [1,2,3,4,4,6,6,7]">
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://images.unsplash.com/photo-1496664444929-8c75efb9546f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-10 mx-auto">
+  <h1 class="text-3xl font-bold text-black font-playfair md:mb-10">Shop top item</h1>
+  <div class="w-full h-fit flex md:gap-6 gap-3 flex-wrap">
+    <div *ngFor="let category of [1,2,2,2,2,2,3,3]">
+      <div class="w-[22rem] p-8 flex flex-col bg-gray-100 rounded-xl cursor-pointer" routerLink="/product">
+        <a class="block relative h-48 p-4 rounded bg-slate-200 overflow-hidden">
+          <img alt="ecommerce" class="object-contain object-center w-full h-full block" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL1bxFNWXZXnQjgBJcAkIaJfDlyZ5ys78e_JZGLawfHQYP65tHDAafhn7ih0h0mlWGjW0&usqp=CAU">
         </a>
-        <div class="mt-4">
+        <div class="mt-4 flex flex-col">
           <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-          <p class="mt-1">$16.00</p>
+          <h2 class="text-gray-900 title-font text-lg font-medium">CategoryName</h2>
+          <p class="text-gray-900 title-font text-lg font-medium">{{3333|currency}}</p>
         </div>
       </div>
     </div>
+  </div>
   </div>
 </section>
