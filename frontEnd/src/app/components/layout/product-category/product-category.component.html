@@ -3,7 +3,7 @@
   <h1 class="text-3xl font-bold text-black font-playfair md:mb-10">Shop top Categories</h1>
   <div class="w-full h-fit flex md:gap-6 gap-3 flex-wrap">
     <div *ngFor="let category of categoryList|async">
-      <div class="w-[22rem] p-8 flex flex-col bg-gray-100 rounded-xl cursor-pointer" [routerLink]="['/categoryDetail',category._id]">
+      <div class="w-[22rem] p-8 flex flex-col bg-gray-100 rounded-xl">
         <a class="block relative h-48 p-4 rounded bg-slate-200 overflow-hidden">
           <img alt="ecommerce" class="object-contain object-center w-full h-full block" src="{{category.imgUrl}}">
         </a>
@@ -13,27 +13,7 @@
             <h2 class="text-gray-900 title-font text-lg font-medium">{{category.categoryName}}</h2>
             <h2 class="text-gray-700 title-font text-lg font-medium">{{category.quantity}}</h2>
           </div>
-          <div class="flex">
-            <button class="material-symbols-outlined" #fill (click)="mark(fill)">
-              grade
-              </button>
-
-              <button class="material-symbols-outlined" #fill1 (click)="mark(fill1)">
-                grade
-                </button>
-
-                <button class="material-symbols-outlined"#fill2 (click)="mark(fill2)">
-                  grade
-                  </button>
-
-                  <button class="material-symbols-outlined"#fill3 (click)="mark(fill3)">
-                    grade
-                    </button>
-
-                    <button class="material-symbols-outlined"#fill4 (click)="mark(fill4)">
-                      grade
-                      </button>
-          </div>
+           <button class="w-full h-10 rounded-md bg-[#3bb77e] text-white font-playfair font-bold" [routerLink]="['/categoryDetail',category._id]">Shop Now</button>
         </div>
       </div>
     </div>
